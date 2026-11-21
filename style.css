@@ -1260,26 +1260,17 @@ a {
   margin-top: 4px;
 }
 
-.btn--whatsapp {
-  background: #25d366;
-  color: #ffffff;
-  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.28);
+.btn--ford-social {
+  background: var(--ford-blue);
+  color: var(--text-white);
+  box-shadow: var(--shadow-btn);
+  padding: 14px 20px;
 }
 
-.btn--whatsapp:hover {
-  background: #1ebe5d;
+.btn--ford-social:hover {
+  background: var(--ford-blue-hover);
   transform: translateY(-2px);
-}
-
-.btn--viber {
-  background: #7360f2;
-  color: #ffffff;
-  box-shadow: 0 6px 18px rgba(115, 96, 242, 0.28);
-}
-
-.btn--viber:hover {
-  background: #5f4ce0;
-  transform: translateY(-2px);
+  box-shadow: var(--shadow-btn-hover);
 }
 
 /* ==========================================================================
@@ -1612,7 +1603,8 @@ a {
   .gallery-grid,
   .testimonials-grid,
   .form-row,
-  .footer__grid {
+  .footer__grid,
+  .booking-submit-group {
     grid-template-columns: 1fr;
   }
 
@@ -1641,12 +1633,6 @@ a {
 
   .lightbox__nav--next {
     right: 10px;
-  }
-}
-
-@media (max-width: 540px) {
-  .booking-submit-group {
-    grid-template-columns: 1fr;
   }
 }
 

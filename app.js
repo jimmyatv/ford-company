@@ -223,9 +223,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const bookingForm = document.getElementById('bookingForm');
   const sendWhatsappBtn = document.getElementById('sendWhatsappBtn');
   const sendViberBtn = document.getElementById('sendViberBtn');
+  const confirmModal = document.getElementById('confirmModal');
+  const modalTitle = confirmModal?.querySelector('h3');
+  const modalSummary = document.getElementById('modalSummary');
+  const closeModalBtn = document.getElementById('closeModalBtn');
 
   // Broj telefona servisa
   const SERVICE_PHONE = '381628684444';
+
+  const closeConfirmModal = () => {
+    confirmModal?.classList.remove('open');
+    confirmModal?.setAttribute('aria-hidden', 'true');
+  };
+
+  confirmModal?.addEventListener('click', ({ target }) => {
+    if (target === confirmModal) closeConfirmModal();
+  });
 
   const buildBookingMessage = () => {
     if (!bookingForm?.reportValidity()) return null;
@@ -259,9 +272,32 @@ document.addEventListener('DOMContentLoaded', () => {
     window.open(`https://wa.me/${SERVICE_PHONE}?text=${encodedText}`, '_blank', 'noopener');
   });
 
-  sendViberBtn?.addEventListener('click', () => {
+  sendViberBtn?.addEventListener('click', async () => {
     const encodedText = buildBookingMessage();
     if (!encodedText) return;
-    window.open(`viber://forward?text=${encodedText}`, '_blank');
+
+    const plainText = decodeURIComponent(encodedText);
+    const viberUrl = `viber://chat?number=%2B${SERVICE_PHONE}`;
+
+    try {
+      await navigator.clipboard.writeText(plainText);
+    } catch {
+      // Ako pregledač blokira automatsko kopiranje, svejedno otvara čet
+    }
+
+    if (confirmModal && modalSummary && closeModalBtn) {
+      if (modalTitle) modalTitle.textContent = 'Tekst zahteva je kopiran!';
+      modalSummary.textContent =
+        'Kliknite „U redu“ da otvorite Viber čet sa servisom, a zatim samo uradite Paste i pošaljite poruku.';
+      confirmModal.classList.add('open');
+      confirmModal.setAttribute('aria-hidden', 'false');
+
+      closeModalBtn.onclick = () => {
+        closeConfirmModal();
+        window.location.href = viberUrl;
+      };
+    } else {
+      window.location.href = viberUrl;
+    }
   });
 });
