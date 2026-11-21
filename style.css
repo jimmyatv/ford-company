@@ -1,0 +1,1698 @@
+/* ==========================================================================
+   CSS VARIJABLE — Zvanična Ford paleta boja i dizajn tokeni
+   ========================================================================== */
+:root {
+  /* Brend boje (Ford Blue) */
+  --ford-blue: #003478;
+  --ford-blue-hover: #0047a3;
+  --ford-blue-dark: #001a3d;
+  --ford-blue-deeper: #00122b;
+  --ford-accent: #1d6fe8;
+  --ford-accent-soft: #93c5fd;
+  --ford-blue-tint: #eef4fc;
+  --ford-blue-tint-hover: #dce9fa;
+
+  /* Neutralne i pozadinske boje */
+  --bg-page: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-muted: #f1f5f9;
+  --bg-footer-bottom: #000f24;
+
+  /* Tekst boje */
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #475569;
+  --text-subtle: #64748b;
+  --text-light: #cbd5e1;
+  --text-on-dark-muted: #94a3b8;
+  --text-white: #ffffff;
+
+  /* Status i akcent boje */
+  --status-success: #16a34a;
+  --status-success-bg: #dcfce7;
+  --status-star: #f59e0b;
+
+  /* Okviri (Borders) */
+  --border-light: #e2e8f0;
+  --border-medium: #cbd5e1;
+  --border-dark-subtle: rgba(255, 255, 255, 0.12);
+  --border-dark-medium: rgba(255, 255, 255, 0.16);
+  --border-brand-subtle: rgba(0, 52, 120, 0.18);
+
+  /* Senke (Shadows) */
+  --shadow-sm: 0 4px 14px rgba(0, 52, 120, 0.12);
+  --shadow-md: 0 12px 28px rgba(0, 52, 120, 0.08);
+  --shadow-lg: 0 24px 50px rgba(0, 26, 61, 0.12);
+  --shadow-hero: 0 25px 50px -12px rgba(0, 26, 61, 0.18);
+  --shadow-btn: 0 6px 18px rgba(0, 52, 120, 0.25);
+  --shadow-btn-hover: 0 10px 24px rgba(0, 52, 120, 0.35);
+
+  /* Zaobljenja (Border Radius) */
+  --radius-sm: 10px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-pill: 999px;
+
+  /* Tipografija */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Montserrat', sans-serif;
+
+  /* Raspored i tranzicije */
+  --container-max: 1180px;
+  --header-height: 78px;
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.28s ease;
+  --transition-slow: 0.45s ease;
+}
+
+/* ==========================================================================
+   RESET & OSNOVNI STILOVI
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background-color: var(--bg-page);
+  line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
+  padding-top: var(--header-height);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   DUGMAD (BUTTONS)
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 22px;
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-align: center;
+}
+
+.btn--lg {
+  padding: 15px 28px;
+  font-size: 1rem;
+}
+
+.btn--full {
+  width: 100%;
+}
+
+.btn--primary {
+  background: var(--ford-blue);
+  color: var(--text-white);
+  box-shadow: var(--shadow-btn);
+}
+
+.btn--primary:hover {
+  background: var(--ford-blue-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-btn-hover);
+}
+
+.btn--outline {
+  background: var(--bg-surface);
+  color: var(--ford-blue);
+  border-color: var(--border-medium);
+}
+
+.btn--outline:hover {
+  border-color: var(--ford-blue);
+  background: var(--ford-blue-tint);
+}
+
+.btn--white {
+  background: var(--bg-surface);
+  color: var(--ford-blue);
+}
+
+.btn--white:hover {
+  background: var(--border-light);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   HEADER & NAVIGACIJA + SCROLLED STANJE (PLAVA POZADINA / BELA SLOVA)
+   ========================================================================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-light);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header.scrolled {
+  background: var(--ford-blue);
+  border-bottom-color: var(--ford-blue);
+  box-shadow: 0 8px 24px rgba(0, 26, 61, 0.22);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  gap: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.logo__oval {
+  flex-shrink: 0;
+  filter: drop-shadow(0 3px 6px rgba(0, 52, 120, 0.22));
+  transition: transform var(--transition-fast);
+}
+
+.logo:hover .logo__oval {
+  transform: scale(1.03);
+}
+
+.logo__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo__brand {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--ford-blue);
+  letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+}
+
+.logo__brand--white {
+  color: var(--text-white);
+}
+
+.logo__sub {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  transition: color 0.3s ease;
+}
+
+.logo__sub--light {
+  color: var(--text-light);
+}
+
+.logo__tagline {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-subtle);
+  margin-top: 2px;
+  transition: color 0.3s ease;
+}
+
+.logo__tagline--light {
+  color: var(--text-on-dark-muted);
+}
+
+/* Bela slova kada je navbar skrolovan */
+.header.scrolled .logo__brand,
+.header.scrolled .logo__sub,
+.header.scrolled .logo__tagline {
+  color: var(--text-white);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav__link {
+  font-weight: 600;
+  font-size: 0.93rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+}
+
+.nav__link:hover {
+  color: var(--ford-blue);
+}
+
+.nav__cta {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.header.scrolled .nav__link {
+  color: var(--text-white);
+}
+
+.header.scrolled .nav__link:hover {
+  color: var(--text-white);
+  opacity: 0.8;
+}
+
+/* Dugme u skrolovanom navbaru prati inverziju plava/bela */
+.header.scrolled .nav__cta {
+  background: var(--text-white);
+  color: var(--ford-blue);
+  box-shadow: none;
+}
+
+.header.scrolled .nav__cta:hover {
+  background: var(--ford-blue-tint);
+  color: var(--ford-blue);
+}
+
+/* ==========================================================================
+   MODERNA ROTIRAJUĆA BURGER ANIMACIJA (360° SPIN + MORPH U X)
+   ========================================================================== */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5.5px;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  padding: 8px;
+  flex-shrink: 0;
+  transition: transform 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55), background-color 0.25s ease;
+}
+
+.burger:hover {
+  background: var(--ford-blue-tint);
+}
+
+.header.scrolled .burger:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.burger__line {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background: var(--ford-blue);
+  border-radius: 3px;
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+              opacity 0.25s ease,
+              background-color 0.3s ease;
+}
+
+.header.scrolled .burger__line {
+  background: var(--text-white);
+}
+
+/* Rotacija celog dugmeta u krug i pretvaranje linija u X */
+.burger.is-active {
+  transform: rotate(360deg);
+}
+
+.burger.is-active .burger__line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.burger.is-active .burger__line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.burger.is-active .burger__line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   HERO SEKCIJA
+   ========================================================================== */
+.hero {
+  position: relative;
+  padding: 64px 0 80px;
+  background: linear-gradient(135deg, #ffffff 0%, #eef4fc 55%, #dce8f8 100%);
+  overflow: hidden;
+}
+
+.hero__bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(0, 52, 120, 0.08) 1px, transparent 1px);
+  background-size: 26px 26px;
+  pointer-events: none;
+}
+
+.hero__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  align-items: center;
+  gap: 44px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-brand-subtle);
+  color: var(--ford-blue);
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 7px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.badge__dot {
+  width: 8px;
+  height: 8px;
+  background: var(--ford-accent);
+  border-radius: 50%;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.95rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: var(--ford-blue-dark);
+  margin-bottom: 18px;
+}
+
+.text-accent {
+  color: var(--ford-blue);
+}
+
+.hero__subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 560px;
+  margin-bottom: 30px;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.hero__stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(0, 52, 120, 0.14);
+}
+
+.stat__num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--ford-blue);
+}
+
+.stat__label {
+  font-size: 0.82rem;
+  color: var(--text-subtle);
+  font-weight: 500;
+}
+
+.stat__divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border-medium);
+}
+
+.hero-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(0, 52, 120, 0.12);
+  box-shadow: var(--shadow-hero);
+  overflow: hidden;
+}
+
+.hero-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: var(--ford-blue-dark);
+  color: var(--text-white);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.hero-card__status {
+  color: #4ade80;
+}
+
+.hero-card__code {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.hero-card__image-wrap {
+  position: relative;
+  height: 270px;
+}
+
+.hero-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 26, 61, 0.88) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 18px;
+}
+
+.model-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.model-tags span {
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(6px);
+  color: var(--text-white);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.hero-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px;
+}
+
+.hero-card__footer strong {
+  display: block;
+  color: var(--ford-blue-dark);
+  font-size: 0.98rem;
+}
+
+.hero-card__footer p {
+  font-size: 0.84rem;
+  color: var(--text-subtle);
+}
+
+.hero-card__arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--ford-blue-tint);
+  color: var(--ford-blue);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+.hero-card__arrow:hover {
+  background: var(--ford-blue);
+  color: var(--text-white);
+}
+
+/* ==========================================================================
+   OPŠTE SEKCIJE
+   ========================================================================== */
+.section {
+  padding: 84px 0;
+}
+
+.section--gray {
+  background: var(--bg-muted);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.section--dark {
+  background: linear-gradient(145deg, var(--ford-blue-dark) 0%, var(--ford-blue) 100%);
+  color: var(--text-white);
+}
+
+.section__head {
+  text-align: center;
+  max-width: 660px;
+  margin: 0 auto 50px;
+}
+
+.section__eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ford-blue);
+  margin-bottom: 10px;
+}
+
+.section__eyebrow--light {
+  color: var(--ford-accent-soft);
+}
+
+.section__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  font-weight: 800;
+  color: var(--ford-blue-dark);
+  line-height: 1.22;
+  margin-bottom: 14px;
+}
+
+.section__title--light {
+  color: var(--text-white);
+}
+
+.section__desc {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* ==========================================================================
+   USLUGE GRID
+   ========================================================================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-base);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--ford-blue);
+  box-shadow: 0 18px 36px rgba(0, 52, 120, 0.1);
+}
+
+.service-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--ford-blue-tint);
+  color: var(--ford-blue);
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+}
+
+.service-card__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ford-blue-dark);
+  margin-bottom: 10px;
+}
+
+.service-card__text {
+  font-size: 0.94rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.service-card__tag {
+  align-self: flex-start;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--ford-blue);
+  background: var(--ford-blue-tint);
+  padding: 5px 11px;
+  border-radius: var(--radius-pill);
+}
+
+/* ==========================================================================
+   ZAŠTO MI
+   ========================================================================== */
+.why-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.85fr;
+  gap: 44px;
+  align-items: center;
+}
+
+.why-lead {
+  color: #dbeafe;
+  font-size: 1.03rem;
+  margin-bottom: 32px;
+}
+
+.why-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.why-item {
+  display: flex;
+  gap: 16px;
+}
+
+.why-item__num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--ford-accent-soft);
+  background: rgba(255, 255, 255, 0.1);
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.why-item h4 {
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.why-item p {
+  font-size: 0.92rem;
+  color: var(--text-light);
+}
+
+.why-panel__card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-dark-medium);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+}
+
+.why-panel__card h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+}
+
+.why-panel__card p {
+  color: #dbeafe;
+  font-size: 0.95rem;
+  margin-bottom: 22px;
+}
+
+.check-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 0.94rem;
+  color: var(--text-white);
+}
+
+.check-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #4ade80;
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   GALERIJA
+   ========================================================================== */
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.filter-btn {
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-medium);
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+  border-color: var(--ford-blue);
+  color: var(--ford-blue);
+}
+
+.filter-btn.active {
+  background: var(--ford-blue);
+  color: var(--text-white);
+  border-color: var(--ford-blue);
+  box-shadow: var(--shadow-sm);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.gallery-item {
+  position: relative;
+  height: 260px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--border-light);
+  background: var(--ford-blue-dark);
+}
+
+.gallery-item.is-hidden {
+  display: none;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.07);
+}
+
+.gallery-item__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 26, 61, 0.92) 0%, rgba(0, 26, 61, 0.25) 55%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  color: var(--text-white);
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item__cat {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ford-accent-soft);
+  margin-bottom: 4px;
+}
+
+.gallery-item__overlay h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.gallery-item__zoom {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--border-light);
+}
+
+/* Lightbox Modal */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  background: rgba(0, 15, 36, 0.94);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox__content {
+  max-width: 860px;
+  width: 100%;
+  text-align: center;
+}
+
+.lightbox__content img {
+  max-height: 68vh;
+  width: auto;
+  margin: 0 auto 18px;
+  border-radius: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox__caption {
+  color: var(--text-white);
+  padding: 0 12px;
+}
+
+.lightbox__caption h4 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.lightbox__caption p {
+  color: var(--text-light);
+  font-size: 0.93rem;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--text-white);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--text-white);
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.lightbox__nav:hover,
+.lightbox__close:hover {
+  background: var(--ford-blue);
+}
+
+.lightbox__nav--prev {
+  left: 20px;
+}
+
+.lightbox__nav--next {
+  right: 20px;
+}
+
+/* ==========================================================================
+   ISKUSTVA KLIJENATA (TESTIMONIALS)
+   ========================================================================== */
+.testimonials-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 44px;
+}
+
+.rating-summary {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  padding: 16px 22px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 52, 120, 0.06);
+  flex-shrink: 0;
+}
+
+.rating-summary__score {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--ford-blue);
+  line-height: 1;
+}
+
+.rating-summary__stars {
+  color: var(--status-star);
+  font-size: 1.15rem;
+  letter-spacing: 2px;
+}
+
+.rating-summary__count {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+  transition: transform var(--transition-base), border-color var(--transition-base);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--ford-blue);
+}
+
+.testimonial-card--hidden {
+  display: none;
+}
+
+.testimonial-card--hidden.is-visible {
+  display: flex;
+}
+
+.testimonial-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.testimonial-card__stars {
+  color: var(--status-star);
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.testimonial-card__car {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ford-blue);
+  background: var(--ford-blue-tint);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.testimonial-card__quote {
+  font-size: 0.94rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 22px;
+}
+
+.testimonial-card__author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--bg-muted);
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--ford-blue);
+  color: var(--text-white);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.88rem;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.testimonial-card__author strong {
+  display: block;
+  font-size: 0.93rem;
+  color: var(--ford-blue-dark);
+}
+
+.testimonial-card__author span {
+  font-size: 0.8rem;
+  color: var(--text-subtle);
+}
+
+.testimonials-more {
+  text-align: center;
+  margin-top: 36px;
+}
+
+/* ==========================================================================
+   ZAKAZIVANJE SERVISA + WHATSAPP / VIBER DUGMAD
+   ========================================================================== */
+.booking-wrapper {
+  display: grid;
+  grid-template-columns: 0.95fr 1.15fr;
+  gap: 44px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-2xl);
+  padding: 44px;
+  box-shadow: var(--shadow-lg);
+}
+
+.booking-info p {
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+.estimate-box {
+  background: var(--ford-blue-tint);
+  border: 1px solid var(--border-brand-subtle);
+  border-radius: 16px;
+  padding: 22px;
+}
+
+.estimate-box__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--ford-blue);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 52, 120, 0.12);
+}
+
+.estimate-badge {
+  background: var(--ford-blue);
+  color: var(--text-white);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.74rem;
+}
+
+.estimate-box__details {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.estimate-box__details small {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-subtle);
+}
+
+.estimate-box__details strong {
+  font-size: 1.05rem;
+  color: var(--ford-blue-dark);
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  background: var(--bg-page);
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--ford-blue);
+  background: var(--bg-surface);
+  box-shadow: 0 0 0 3px rgba(0, 52, 120, 0.12);
+}
+
+.booking-submit-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.btn--whatsapp {
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.28);
+}
+
+.btn--whatsapp:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+}
+
+.btn--viber {
+  background: #7360f2;
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(115, 96, 242, 0.28);
+}
+
+.btn--viber:hover {
+  background: #5f4ce0;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   LOKACIJA SERVISA (ALPSKA 4, NIŠ)
+   ========================================================================== */
+.location-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.15fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.location-info__desc {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 26px;
+}
+
+.location-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.location-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+}
+
+.location-item__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--ford-blue-tint);
+  color: var(--ford-blue);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.location-item strong {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--ford-blue-dark);
+}
+
+.location-item span {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.location-item a {
+  color: var(--ford-blue);
+  font-weight: 700;
+}
+
+.location-item a:hover {
+  text-decoration: underline;
+}
+
+.location-map {
+  width: 100%;
+  height: 390px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--border-medium);
+  box-shadow: var(--shadow-md);
+  background: var(--bg-surface);
+}
+
+.location-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* ==========================================================================
+   FUTER
+   ========================================================================== */
+.footer {
+  background: var(--ford-blue-deeper);
+  color: var(--text-light);
+  padding-top: 64px;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 0.8fr;
+  gap: 36px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer__desc {
+  margin-top: 16px;
+  font-size: 0.92rem;
+  color: var(--text-on-dark-muted);
+  max-width: 310px;
+}
+
+.footer__heading {
+  font-family: var(--font-display);
+  color: var(--text-white);
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.footer__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-on-dark-muted);
+}
+
+.footer__list a:hover {
+  color: var(--text-white);
+  text-decoration: underline;
+}
+
+.footer__bottom {
+  background: var(--bg-footer-bottom);
+  padding: 20px 0;
+  font-size: 0.84rem;
+  color: var(--text-subtle);
+}
+
+.footer__bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer__author a {
+  color: var(--text-light);
+  font-weight: 700;
+  transition: color var(--transition-fast);
+}
+
+.footer__author a:hover {
+  color: var(--text-white);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   BACK TO TOP DUGME
+   ========================================================================== */
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1500;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--ford-blue);
+  color: var(--text-white);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 10px 25px rgba(0, 26, 61, 0.32);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--ford-blue-hover);
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   MODAL POTVRDE ZAKAZIVANJA
+   ========================================================================== */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 18, 43, 0.72);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal__box {
+  background: var(--bg-surface);
+  max-width: 440px;
+  width: 100%;
+  border-radius: var(--radius-xl);
+  padding: 34px;
+  text-align: center;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.modal__icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--status-success-bg);
+  color: var(--status-success);
+  font-size: 1.8rem;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 18px;
+}
+
+.modal__box h3 {
+  font-family: var(--font-display);
+  color: var(--ford-blue-dark);
+  margin-bottom: 10px;
+}
+
+.modal__box p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+/* ==========================================================================
+   RESPONZIVNOST (TABLET & MOBILNI UREĐAJI)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .burger {
+    display: flex;
+  }
+
+  .nav {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background: var(--bg-surface);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 22px 20px 26px;
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-130%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.35s ease, opacity 0.3s ease, background-color 0.3s ease;
+  }
+
+  /* Kada je navbar skrolovan (plav), i padajući meni prati tu istu plavo-belu temu */
+  .header.scrolled .nav {
+    background: var(--ford-blue);
+    border-bottom-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .nav__link {
+    display: block;
+    padding: 6px 0;
+    font-size: 1rem;
+  }
+
+  .hero__inner,
+  .why-grid,
+  .booking-wrapper,
+  .location-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .hero {
+    padding: 48px 0 64px;
+  }
+
+  .services-grid,
+  .gallery-grid,
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 18px;
+  }
+
+  .section {
+    padding: 64px 0;
+  }
+
+  .services-grid,
+  .gallery-grid,
+  .testimonials-grid,
+  .form-row,
+  .footer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card__image-wrap {
+    height: 230px;
+  }
+
+  .booking-wrapper {
+    padding: 28px 20px;
+    border-radius: var(--radius-xl);
+  }
+
+  .location-map {
+    height: 300px;
+  }
+
+  .lightbox__nav {
+    width: 38px;
+    height: 38px;
+    font-size: 1.4rem;
+  }
+
+  .lightbox__nav--prev {
+    left: 10px;
+  }
+
+  .lightbox__nav--next {
+    right: 10px;
+  }
+}
+
+@media (max-width: 540px) {
+  .booking-submit-group {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo__oval {
+    width: 106px;
+    height: 46px;
+  }
+
+  .logo__brand {
+    font-size: 1.1rem;
+  }
+
+  .logo__sub {
+    font-size: 0.95rem;
+  }
+
+  .logo__tagline {
+    font-size: 0.65rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+  }
+
+  .hero__stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .stat__divider {
+    display: none;
+  }
+
+  .rating-summary {
+    width: 100%;
+  }
+
+  .location-btn {
+    width: 100%;
+  }
+
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 44px;
+    height: 44px;
+  }
+}

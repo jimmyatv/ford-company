@@ -1,0 +1,51 @@
+const SERVICES_DATA = [
+  {
+    value: 'Mali servis',
+    label: 'Mali servis (ulje i filteri)',
+    time: '~ 60 min',
+    price: 'od 3.500 RSD',
+    badge: 'Brza usluga',
+  },
+  {
+    value: 'Veliki servis',
+    label: 'Veliki servis / EcoBoost kaiš',
+    time: '3 – 5 sati',
+    price: 'od 12.000 RSD',
+    badge: 'Zakazivanje unapred',
+  },
+  {
+    value: 'Kompjuterska dijagnostika',
+    label: 'IDS / FDRS Dijagnostika',
+    time: '~ 30 min',
+    price: '2.500 RSD',
+    badge: 'Isti dan',
+  },
+  {
+    value: 'Servis kočnica / trapa',
+    label: 'Servis kočnica i trapa',
+    time: '1 – 2 sata',
+    price: 'od 3.000 RSD',
+    badge: 'Bezbednost',
+  },
+  {
+    value: 'Servis PowerShift menjača',
+    label: 'Servis menjača / kvačila',
+    time: '2 – 3 sata',
+    price: 'od 8.000 RSD',
+    badge: 'Specijalizovano',
+  },
+  {
+    value: 'Servis klime / pregled',
+    label: 'Auto klima / pregled za put',
+    time: '~ 45 min',
+    price: 'od 3.500 RSD',
+    badge: 'Sezonski',
+  },
+  {
+    value: 'Balansiranje guma',
+    label: 'Balansiranje guma',
+    time: '~ 30 min',
+    price: 'od 1.500 RSD',
+    badge: 'Brza usluga',
+  },
+];
