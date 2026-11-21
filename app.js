@@ -224,8 +224,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const sendWhatsappBtn = document.getElementById('sendWhatsappBtn');
   const sendViberBtn = document.getElementById('sendViberBtn');
 
-  // Broj telefona servisa (format 38160xxxxxxx, bez + i bez nule)
-  const SERVICE_PHONE = '381601234567';
+  // Broj telefona servisa
+  const SERVICE_PHONE = '381606546008';
 
   const buildBookingMessage = () => {
     if (!bookingForm?.reportValidity()) return null;

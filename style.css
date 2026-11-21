@@ -330,16 +330,21 @@ a {
   width: 44px;
   height: 44px;
   border-radius: var(--radius-sm);
-  background: transparent;
-  border: 1.5px solid transparent;
+  background: transparent !important;
+  border: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   padding: 8px;
   flex-shrink: 0;
-  transition: transform 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55), background-color 0.25s ease;
+  transition: transform 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.burger:hover {
-  background: var(--ford-blue-tint);
+.burger:hover,
+.burger:focus,
+.burger:active {
+  background: transparent !important;
+  outline: none;
 }
 
 .header.scrolled .burger:hover {
