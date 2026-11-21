@@ -300,4 +300,99 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = viberUrl;
     }
   });
+
+  // 8. Scroll Reveal animacije u viewportu + Count-Up za brojeve
+  const setupScrollAnimations = () => {
+    const animateCounter = (el) => {
+      if (el.dataset.counted) return;
+      el.dataset.counted = 'true';
+
+      const rawText = el.textContent.trim();
+      const match = rawText.match(/^([^\d.-]*)([\d.,]+)(.*)$/);
+      if (!match) return;
+
+      const [, prefix, numStr, suffix] = match;
+      const target = parseFloat(numStr.replace(',', '.'));
+      const decimals = (numStr.split('.')[1] || '').length;
+      const duration = 1400;
+      const startTime = performance.now();
+
+      const step = (now) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+        const current = (target * eased).toFixed(decimals);
+        el.textContent = `${prefix}${current}${suffix}`;
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = rawText;
+        }
+      };
+
+      requestAnimationFrame(step);
+    };
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const target = entry.target;
+
+          if (target.classList.contains('count-target')) {
+            animateCounter(target);
+          } else {
+            target.classList.add('is-revealed');
+          }
+
+          obs.unobserve(target);
+        });
+      },
+      { threshold: 0.14, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    // Elementi koji dolaze odozdo sa kaskadom
+    const staggerGroups = [
+      '.section__head',
+      '.service-card',
+      '.gallery-item',
+      '.testimonial-card:not(.testimonial-card--hidden)',
+      '.location-item',
+    ];
+
+    staggerGroups.forEach((selector) => {
+      document.querySelectorAll(selector).forEach((el, idx) => {
+        el.classList.add('reveal');
+        el.style.transitionDelay = `${(idx % 3) * 90}ms`;
+        observer.observe(el);
+      });
+    });
+
+    // Elementi koji dolaze sa leve strane
+    document
+      .querySelectorAll('.hero__content, .why-item, .booking-info, .location-info')
+      .forEach((el, idx) => {
+        el.classList.add('reveal', 'reveal--left');
+        el.style.transitionDelay = `${(idx % 3) * 100}ms`;
+        observer.observe(el);
+      });
+
+    // Elementi koji dolaze sa desne strane
+    document
+      .querySelectorAll('.hero__visual, .why-panel, .booking-form, .location-map')
+      .forEach((el) => {
+        el.classList.add('reveal', 'reveal--right');
+        observer.observe(el);
+      });
+
+    // Brojači statistike
+    document
+      .querySelectorAll('.stat__num, .rating-summary__score')
+      .forEach((el) => {
+        el.classList.add('count-target');
+        observer.observe(el);
+      });
+  };
+
+  setupScrollAnimations();
 });

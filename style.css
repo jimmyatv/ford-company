@@ -1687,3 +1687,35 @@ a {
     height: 44px;
   }
 }
+
+/* ==========================================================================
+   SCROLL REVEAL ANIMACIJE (VIEWPORT)
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal--left {
+  transform: translateX(-34px);
+}
+
+.reveal--right {
+  transform: translateX(34px);
+}
+
+.reveal.is-revealed {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
