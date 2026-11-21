@@ -1,7 +1,7 @@
 const REVIEWS_DATA = [
   {
-    name: 'Nikola Marković',
-    initials: 'NM',
+    name: 'Mladen Simić',
+    initials: 'MS',
     car: 'Ford Focus 1.0 EcoBoost',
     meta: 'Veliki servis',
     rating: 5,
@@ -9,8 +9,8 @@ const REVIEWS_DATA = [
       'Dugo sam tražio majstora koji stvarno poznaje EcoBoost motore i zamenu kaiša u ulju. U FORD company su mi sve detaljno objasnili, pokazali stare delove i završili auto tačno po dogovoru. Svaka preporuka!',
   },
   {
-    name: 'Dejan Jovanović',
-    initials: 'DJ',
+    name: 'Aleksandar Rašić',
+    initials: 'AR',
     car: 'Ford Mondeo 2.0 TDCi',
     meta: 'Dijagnostika i popravka',
     rating: 5,
