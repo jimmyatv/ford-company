@@ -1693,29 +1693,36 @@ a {
    ========================================================================== */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
+  transform: translate3d(0, 22px, 0);
+  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
 }
 
-.reveal--left {
-  transform: translateX(-34px);
+.reveal.reveal--left {
+  transform: translate3d(-24px, 0, 0);
 }
 
-.reveal--right {
-  transform: translateX(34px);
+.reveal.reveal--right {
+  transform: translate3d(24px, 0, 0);
 }
 
 .reveal.is-revealed {
   opacity: 1;
-  transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
+@media (max-width: 768px) {
+  .reveal.reveal--left,
+  .reveal.reveal--right {
+    transform: translate3d(0, 20px, 0);
   }
+}
+
+.stat__num,
+.rating-summary__score {
+  font-variant-numeric: tabular-nums;
+}
+
+.rating-summary__score {
+  min-width: 2.3ch;
+  text-align: center;
 }

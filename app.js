@@ -301,7 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 8. Scroll Reveal animacije u viewportu + Count-Up za brojeve
+  // 8. Scroll Reveal animacije u viewportu + Count-Up za brojeve (Web Animations API - 0% treperenja)
   const setupScrollAnimations = () => {
     const animateCounter = (el) => {
       if (el.dataset.counted) return;
@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const step = (now) => {
         const progress = Math.min((now - startTime) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+        const eased = 1 - Math.pow(1 - progress, 3);
         const current = (target * eased).toFixed(decimals);
         el.textContent = `${prefix}${current}${suffix}`;
 
@@ -333,6 +333,34 @@ document.addEventListener('DOMContentLoaded', () => {
       requestAnimationFrame(step);
     };
 
+    const runReveal = (el) => {
+      if (el.dataset.revealed) return;
+      el.dataset.revealed = 'true';
+
+      const dir = el.dataset.revealDir || 'up';
+      const delay = Number(el.dataset.revealDelay || 0);
+      const isMobile = window.innerWidth <= 768;
+
+      let startTransform = 'translate3d(0, 24px, 0)';
+      if (!isMobile && dir === 'left') startTransform = 'translate3d(-28px, 0, 0)';
+      if (!isMobile && dir === 'right') startTransform = 'translate3d(28px, 0, 0)';
+
+      el.animate(
+        [
+          { opacity: 0, transform: startTransform },
+          { opacity: 1, transform: 'translate3d(0, 0, 0)' },
+        ],
+        {
+          duration: 600,
+          delay,
+          easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+          fill: 'backwards',
+        }
+      );
+
+      el.style.opacity = '1';
+    };
+
     const observer = new IntersectionObserver(
       (entries, obs) => {
         entries.forEach((entry) => {
@@ -342,50 +370,33 @@ document.addEventListener('DOMContentLoaded', () => {
           if (target.classList.contains('count-target')) {
             animateCounter(target);
           } else {
-            target.classList.add('is-revealed');
+            runReveal(target);
           }
 
           obs.unobserve(target);
         });
       },
-      { threshold: 0.14, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.08 }
     );
 
-    // Elementi koji dolaze odozdo sa kaskadom
-    const staggerGroups = [
-      '.section__head',
-      '.service-card',
-      '.gallery-item',
-      '.testimonial-card:not(.testimonial-card--hidden)',
-      '.location-item',
-    ];
-
-    staggerGroups.forEach((selector) => {
+    const register = (selector, dir = 'up', stagger = 0) => {
       document.querySelectorAll(selector).forEach((el, idx) => {
-        el.classList.add('reveal');
-        el.style.transitionDelay = `${(idx % 3) * 90}ms`;
+        el.style.opacity = '0';
+        el.dataset.revealDir = dir;
+        if (stagger) el.dataset.revealDelay = String((idx % 3) * stagger);
         observer.observe(el);
       });
-    });
+    };
 
-    // Elementi koji dolaze sa leve strane
-    document
-      .querySelectorAll('.hero__content, .why-item, .booking-info, .location-info')
-      .forEach((el, idx) => {
-        el.classList.add('reveal', 'reveal--left');
-        el.style.transitionDelay = `${(idx % 3) * 100}ms`;
-        observer.observe(el);
-      });
+    register('.section__head', 'up', 0);
+    register('.service-card', 'up', 80);
+    register('.gallery-item', 'up', 80);
+    register('.testimonial-card:not(.testimonial-card--hidden)', 'up', 80);
+    register('.location-item', 'up', 80);
 
-    // Elementi koji dolaze sa desne strane
-    document
-      .querySelectorAll('.hero__visual, .why-panel, .booking-form, .location-map')
-      .forEach((el) => {
-        el.classList.add('reveal', 'reveal--right');
-        observer.observe(el);
-      });
+    register('.hero__content, .why-item, .booking-info, .location-info', 'left', 90);
+    register('.hero__visual, .why-panel, .booking-form, .location-map', 'right', 0);
 
-    // Brojači statistike
     document
       .querySelectorAll('.stat__num, .rating-summary__score')
       .forEach((el) => {
