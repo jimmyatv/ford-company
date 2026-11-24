@@ -1726,3 +1726,24 @@ a {
   min-width: 2.3ch;
   text-align: center;
 }
+
+/* Pozadinska slika Forda u Hero sekciji sa niskim opacity-jem */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=1600&q=80") center center / cover no-repeat;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+}
