@@ -24,7 +24,7 @@
   --text-muted: #475569;
   --text-subtle: #64748b;
   --text-light: #cbd5e1;
-  --text-on-dark-muted: #94a3b8;
+  --text-on-dark-muted: #cbd5e1;
   --text-white: #ffffff;
 
   /* Status i akcent boje */
@@ -81,7 +81,6 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 84px;
-  overflow-x: hidden;
 }
 
 body {
@@ -89,9 +88,13 @@ body {
   color: var(--text-primary);
   background-color: var(--bg-page);
   line-height: 1.6;
-  overflow-x: hidden;
   width: 100%;
+  overflow-x: clip;
   padding-top: var(--header-height);
+}
+
+main {
+  overflow-x: clip;
 }
 
 img {
@@ -125,7 +128,11 @@ a {
   border-radius: var(--radius-sm);
   border: 2px solid transparent;
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition: background-color var(--transition-base),
+              color var(--transition-base),
+              border-color var(--transition-base),
+              box-shadow var(--transition-base),
+              transform var(--transition-base);
   text-align: center;
 }
 
@@ -180,6 +187,7 @@ a {
   left: 0;
   right: 0;
   width: 100%;
+  height: var(--header-height);
   z-index: 1000;
   background: var(--bg-surface);
   border-bottom: 1px solid var(--border-light);
@@ -196,7 +204,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: var(--header-height);
+  height: 100%;
   gap: 16px;
 }
 
@@ -252,13 +260,13 @@ a {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--text-subtle);
+  color: var(--text-muted);
   margin-top: 2px;
   transition: color 0.3s ease;
 }
 
 .logo__tagline--light {
-  color: var(--text-on-dark-muted);
+  color: var(--text-light);
 }
 
 /* Bela slova kada je navbar skrolovan */
@@ -330,7 +338,7 @@ a {
   width: 44px;
   height: 44px;
   border-radius: var(--radius-sm);
-  background: transparent !important;
+  background: transparent;
   border: none;
   outline: none;
   -webkit-tap-highlight-color: transparent;
@@ -343,12 +351,13 @@ a {
 .burger:hover,
 .burger:focus,
 .burger:active {
-  background: transparent !important;
+  background: transparent;
   outline: none;
 }
 
-.header.scrolled .burger:hover {
-  background: rgba(255, 255, 255, 0.14);
+.burger:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 .burger__line {
@@ -395,16 +404,28 @@ a {
   overflow: hidden;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=1600&q=80") center center / cover no-repeat;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .hero__bg-grid {
   position: absolute;
   inset: 0;
   background-image: radial-gradient(rgba(0, 52, 120, 0.08) 1px, transparent 1px);
   background-size: 26px 26px;
   pointer-events: none;
+  z-index: 0;
 }
 
 .hero__inner {
   position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1.15fr 0.95fr;
   align-items: center;
@@ -475,11 +496,12 @@ a {
   font-size: 1.45rem;
   font-weight: 800;
   color: var(--ford-blue);
+  font-variant-numeric: tabular-nums;
 }
 
 .stat__label {
   font-size: 0.82rem;
-  color: var(--text-subtle);
+  color: var(--text-muted);
   font-weight: 500;
 }
 
@@ -511,6 +533,10 @@ a {
 
 .hero-card__status {
   color: #4ade80;
+}
+
+.hero-card__status.is-closed {
+  color: #f87171;
 }
 
 .hero-card__code {
@@ -574,7 +600,7 @@ a {
 
 .hero-card__footer p {
   font-size: 0.84rem;
-  color: var(--text-subtle);
+  color: var(--text-muted);
 }
 
 .hero-card__arrow {
@@ -588,7 +614,7 @@ a {
   font-weight: 800;
   font-size: 1.1rem;
   flex-shrink: 0;
-  transition: var(--transition-fast);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
 .hero-card__arrow:hover {
@@ -626,7 +652,7 @@ a {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--ford-blue);
+  color: #00449e;
   margin-bottom: 10px;
 }
 
@@ -668,7 +694,9 @@ a {
   padding: 28px;
   display: flex;
   flex-direction: column;
-  transition: all var(--transition-base);
+  transition: transform var(--transition-base),
+              border-color var(--transition-base),
+              box-shadow var(--transition-base);
 }
 
 .service-card:hover {
@@ -754,9 +782,13 @@ a {
   flex-shrink: 0;
 }
 
+.why-item h3,
 .why-item h4 {
+  font-family: var(--font-display);
   font-size: 1.05rem;
-  margin-bottom: 4px;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 6px;
 }
 
 .why-item p {
@@ -765,8 +797,7 @@ a {
 }
 
 .why-panel__card {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.11);
   border: 1px solid var(--border-dark-medium);
   border-radius: var(--radius-xl);
   padding: 32px;
@@ -828,7 +859,10 @@ a {
   font-weight: 700;
   font-size: 0.88rem;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: background-color var(--transition-fast),
+              color var(--transition-fast),
+              border-color var(--transition-fast),
+              box-shadow var(--transition-fast);
 }
 
 .filter-btn:hover {
@@ -895,11 +929,13 @@ a {
   margin-bottom: 4px;
 }
 
+.gallery-item__overlay h3,
 .gallery-item__overlay h4 {
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   font-weight: 700;
-  margin-bottom: 6px;
+  color: var(--text-white);
+  margin: 4px 0 6px;
 }
 
 .gallery-item__zoom {
@@ -945,6 +981,7 @@ a {
   padding: 0 12px;
 }
 
+.lightbox__caption h3,
 .lightbox__caption h4 {
   font-family: var(--font-display);
   font-size: 1.2rem;
@@ -983,7 +1020,7 @@ a {
   font-size: 1.8rem;
   line-height: 1;
   cursor: pointer;
-  transition: background var(--transition-fast);
+  transition: background-color var(--transition-fast);
 }
 
 .lightbox__nav:hover,
@@ -1028,6 +1065,9 @@ a {
   font-weight: 800;
   color: var(--ford-blue);
   line-height: 1;
+  font-variant-numeric: tabular-nums;
+  min-width: 2.3ch;
+  text-align: center;
 }
 
 .rating-summary__stars {
@@ -1133,7 +1173,7 @@ a {
 
 .testimonial-card__author span {
   font-size: 0.8rem;
-  color: var(--text-subtle);
+  color: var(--text-muted);
 }
 
 .testimonials-more {
@@ -1198,7 +1238,7 @@ a {
 .estimate-box__details small {
   display: block;
   font-size: 0.78rem;
-  color: var(--text-subtle);
+  color: var(--text-muted);
 }
 
 .estimate-box__details strong {
@@ -1374,7 +1414,7 @@ a {
 .footer__desc {
   margin-top: 16px;
   font-size: 0.92rem;
-  color: var(--text-on-dark-muted);
+  color: var(--text-light);
   max-width: 310px;
 }
 
@@ -1391,7 +1431,7 @@ a {
   flex-direction: column;
   gap: 10px;
   font-size: 0.9rem;
-  color: var(--text-on-dark-muted);
+  color: var(--text-light);
 }
 
 .footer__list a:hover {
@@ -1403,7 +1443,7 @@ a {
   background: var(--bg-footer-bottom);
   padding: 20px 0;
   font-size: 0.84rem;
-  color: var(--text-subtle);
+  color: var(--text-light);
 }
 
 .footer__bottom-inner {
@@ -1414,13 +1454,13 @@ a {
 }
 
 .footer__author a {
-  color: var(--text-light);
+  color: var(--text-white);
   font-weight: 700;
   transition: color var(--transition-fast);
 }
 
 .footer__author a:hover {
-  color: var(--text-white);
+  color: var(--ford-accent-soft);
   text-decoration: underline;
 }
 
@@ -1514,6 +1554,28 @@ a {
 }
 
 /* ==========================================================================
+   SCROLL REVEAL ANIMACIJE (VIEWPORT)
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+}
+
+.reveal.reveal--left {
+  transform: translate3d(-24px, 0, 0);
+}
+
+.reveal.reveal--right {
+  transform: translate3d(24px, 0, 0);
+}
+
+.reveal.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* ==========================================================================
    RESPONZIVNOST (TABLET & MOBILNI UREĐAJI)
    ========================================================================== */
 @media (max-width: 1024px) {
@@ -1538,7 +1600,6 @@ a {
     transition: transform 0.35s ease, opacity 0.3s ease, background-color 0.3s ease;
   }
 
-  /* Kada je navbar skrolovan (plav), i padajući meni prati tu istu plavo-belu temu */
   .header.scrolled .nav {
     background: var(--ford-blue);
     border-bottom-color: rgba(255, 255, 255, 0.15);
@@ -1634,6 +1695,11 @@ a {
   .lightbox__nav--next {
     right: 10px;
   }
+
+  .reveal.reveal--left,
+  .reveal.reveal--right {
+    transform: translate3d(0, 20px, 0);
+  }
 }
 
 @media (max-width: 480px) {
@@ -1686,104 +1752,4 @@ a {
     width: 44px;
     height: 44px;
   }
-}
-
-/* ==========================================================================
-   SCROLL REVEAL ANIMACIJE (VIEWPORT)
-   ========================================================================== */
-.reveal {
-  opacity: 0;
-  transform: translate3d(0, 22px, 0);
-  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
-}
-
-.reveal.reveal--left {
-  transform: translate3d(-24px, 0, 0);
-}
-
-.reveal.reveal--right {
-  transform: translate3d(24px, 0, 0);
-}
-
-.reveal.is-revealed {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-}
-
-@media (max-width: 768px) {
-  .reveal.reveal--left,
-  .reveal.reveal--right {
-    transform: translate3d(0, 20px, 0);
-  }
-}
-
-.stat__num,
-.rating-summary__score {
-  font-variant-numeric: tabular-nums;
-}
-
-.rating-summary__score {
-  min-width: 2.3ch;
-  text-align: center;
-}
-
-/* Pozadinska slika Forda u Hero sekciji sa niskim opacity-jem */
-.hero {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=1600&q=80") center center / cover no-repeat;
-  opacity: 0.2;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.hero__inner {
-  position: relative;
-  z-index: 1;
-}
-
-/* Popravka kontrasta za Lighthouse 100 Accessibility i h3 stilovi */
-.section__eyebrow {
-  color: #00449e;
-}
-
-.section__eyebrow--light {
-  color: #93c5fd;
-}
-
-.hero-card__status {
-  color: #4ade80;
-}
-
-.footer__desc,
-.footer__list,
-.footer__bottom {
-  color: #cbd5e1;
-}
-
-.why-item h3 {
-  font-family: var(--font-heading, 'Montserrat', sans-serif);
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 6px;
-}
-
-.gallery-item__overlay h3 {
-  font-family: var(--font-heading, 'Montserrat', sans-serif);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 4px 0;
-}
-
-/* Crveni status kada servis ne radi (visok kontrast za Lighthouse 100) */
-.hero-card__status.is-closed {
-  color: #f87171;
 }
