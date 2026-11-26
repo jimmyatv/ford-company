@@ -406,4 +406,51 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   setupScrollAnimations();
+
+  // 9. Uživo status radnog vremena (vremenska zona Srbija / Niš)
+  const updateServiceStatus = () => {
+    const statusEl = document.querySelector('.hero-card__status');
+    if (!statusEl) return;
+
+    // Uzima tačno vreme u Srbiji bez obzira gde se posetilac nalazi
+    const belgradeNow = new Date(
+      new Date().toLocaleString('en-US', { timeZone: 'Europe/Belgrade' })
+    );
+
+    const day = belgradeNow.getDay(); // 0 = Nedelja, 1-5 = Pon-Pet, 6 = Subota
+    const totalMinutes = belgradeNow.getHours() * 60 + belgradeNow.getMinutes();
+
+    let isOpen = false;
+    let hoursLabel = 'Radno vreme 08–17h';
+
+    if (day >= 1 && day <= 5) {
+      isOpen = totalMinutes >= 8 * 60 && totalMinutes < 17 * 60;
+      hoursLabel = isOpen
+        ? 'Radno vreme 08–17h'
+        : totalMinutes < 8 * 60
+        ? 'Otvaramo danas u 08h'
+        : day === 5
+        ? 'Otvaramo u subotu u 08h'
+        : 'Otvaramo sutra u 08h';
+    } else if (day === 6) {
+      isOpen = totalMinutes >= 8 * 60 && totalMinutes < 14 * 60;
+      hoursLabel = isOpen
+        ? 'Subotom 08–14h'
+        : totalMinutes < 8 * 60
+        ? 'Otvaramo danas u 08h'
+        : 'Otvaramo u ponedeljak u 08h';
+    } else {
+      // Nedelja
+      isOpen = false;
+      hoursLabel = 'Otvaramo u ponedeljak u 08h';
+    }
+
+    statusEl.classList.toggle('is-closed', !isOpen);
+    statusEl.textContent = isOpen
+      ? `● Servis aktivan • ${hoursLabel}`
+      : `● Trenutno zatvoreno • ${hoursLabel}`;
+  };
+
+  updateServiceStatus();
+  setInterval(updateServiceStatus, 60000); // osvežava svakog minuta
 });

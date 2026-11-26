@@ -5,11 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FORD company | Specijalizovani Ford Auto Servis Niš</title>
   <meta name="description" content="FORD company — specijalizovani auto-servis za Ford vozila u Nišu (Alpska 4). Originalna IDS/FDRS dijagnostika, EcoBoost motori, mali i veliki servis, PowerShift menjači." />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 64'%3E%3Cellipse cx='75' cy='32' rx='73' ry='30' fill='%23CBD5E1'/%3E%3Cellipse cx='75' cy='32' rx='66' ry='24.5' fill='%23003478' stroke='%23FFFFFF' stroke-width='2'/%3E%3Ctext x='75' y='40' text-anchor='middle' fill='%23FFFFFF' font-family='sans-serif' font-weight='800' font-style='italic' font-size='25'%3EFORD%3C/text%3E%3C/svg%3E" />
+
+  <!-- Preload glavne LCP slike u Hero sekciji -->
+  <link
+    rel="preload"
+    as="image"
+    href="https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=900&q=80"
+    fetchpriority="high"
+  />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+    media="print"
+    onload="this.media='all'"
+  />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </noscript>
+
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    media="print"
+    onload="this.media='all'"
+  />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  </noscript>
 </head>
 <body>
 
@@ -17,7 +46,7 @@
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="#" class="logo" aria-label="FORD company početna">
-        <svg class="logo__oval" viewBox="0 0 150 64" width="126" height="54" xmlns="http://www.w3.org/2000/svg">
+        <svg class="logo__oval" viewBox="0 0 150 64" width="126" height="54" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs>
             <linearGradient id="chromeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stop-color="#FFFFFF" />
@@ -42,7 +71,7 @@
         </div>
       </a>
 
-      <nav class="nav" id="navMenu">
+      <nav class="nav" id="navMenu" aria-label="Glavna navigacija">
         <ul class="nav__list">
           <li><a href="#usluge" class="nav__link">Usluge</a></li>
           <li><a href="#zasto-mi" class="nav__link">Zašto mi</a></li>
@@ -62,478 +91,488 @@
     </div>
   </header>
 
-  <!-- HERO SEKCIJA -->
-  <section class="hero">
-    <div class="hero__bg-grid"></div>
-    <div class="container hero__inner">
-      <div class="hero__content">
-        <div class="badge">
-          <span class="badge__dot"></span>
-          Specijalizovan Ford servis • Niš
-        </div>
-        <h1 class="hero__title">
-          Vaš Ford zaslužuje <span class="text-accent">fabričku preciznost</span> i sigurnost.
-        </h1>
-        <p class="hero__subtitle">
-          Od redovnog održavanja i originalne IDS/FDRS dijagnostike do kompleksnih popravki EcoBoost i TDCi motora. Pouzdan partner za vaš automobil u <strong>FORD company</strong> servisu.
-        </p>
-        <div class="hero__actions">
-          <a href="#zakazivanje" class="btn btn--primary btn--lg">Zakaži termin online</a>
-          <a href="tel:+381600670725" class="btn btn--outline btn--lg">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            060 / 0670725
-          </a>
+  <main id="mainContent">
+    <!-- HERO SEKCIJA -->
+    <section class="hero">
+      <div class="hero__bg-grid"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <div class="badge">
+            <span class="badge__dot"></span>
+            Specijalizovan Ford servis • Niš
+          </div>
+          <h1 class="hero__title">
+            Vaš Ford zaslužuje <span class="text-accent">fabričku preciznost</span> i sigurnost.
+          </h1>
+          <p class="hero__subtitle">
+            Od redovnog održavanja i originalne IDS/FDRS dijagnostike do kompleksnih popravki EcoBoost i TDCi motora. Pouzdan partner za vaš automobil u <strong>FORD company</strong> servisu.
+          </p>
+          <div class="hero__actions">
+            <a href="#zakazivanje" class="btn btn--primary btn--lg">Zakaži termin online</a>
+            <a href="tel:+381600670725" class="btn btn--outline btn--lg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              060 / 0670725
+            </a>
+          </div>
+
+          <div class="hero__stats">
+            <div class="stat">
+              <span class="stat__num">12+</span>
+              <span class="stat__label">Godina iskustva sa Fordom</span>
+            </div>
+            <div class="stat__divider"></div>
+            <div class="stat">
+              <span class="stat__num">4.9 ★</span>
+              <span class="stat__label">Prosečna ocena vozača</span>
+            </div>
+            <div class="stat__divider"></div>
+            <div class="stat">
+              <span class="stat__num">100%</span>
+              <span class="stat__label">Garancija na delove i rad</span>
+            </div>
+          </div>
         </div>
 
-        <div class="hero__stats">
-          <div class="stat">
-            <span class="stat__num">12+</span>
-            <span class="stat__label">Godina iskustva sa Fordom</span>
-          </div>
-          <div class="stat__divider"></div>
-          <div class="stat">
-            <span class="stat__num">4.9 ★</span>
-            <span class="stat__label">Prosečna ocena vozača</span>
-          </div>
-          <div class="stat__divider"></div>
-          <div class="stat">
-            <span class="stat__num">100%</span>
-            <span class="stat__label">Garancija na delove i rad</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero__visual">
-        <div class="hero-card">
-          <div class="hero-card__header">
-            <span class="hero-card__status">● Servis aktivan • Radno vreme 08–17h</span>
-            <span class="hero-card__code">IDS / FDRS</span>
-          </div>
-          <div class="hero-card__image-wrap">
-            <img src="https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=900&q=80" alt="Ford vozilo u servisu" class="hero-card__img" />
-            <div class="hero-card__overlay">
-              <div class="model-tags">
-                <span>Focus</span>
-                <span>Fiesta</span>
-                <span>Mondeo</span>
-                <span>Kuga</span>
-                <span>Puma</span>
-                <span>Ranger</span>
-                <span>Transit</span>
+        <div class="hero__visual">
+          <div class="hero-card">
+            <div class="hero-card__header">
+              <span class="hero-card__status">● Servis aktivan • Radno vreme 08–17h</span>
+              <span class="hero-card__code">IDS / FDRS</span>
+            </div>
+            <div class="hero-card__image-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=900&q=80"
+                alt="Ford vozilo u servisu"
+                class="hero-card__img"
+                width="900"
+                height="600"
+                fetchpriority="high"
+                decoding="async"
+              />
+              <div class="hero-card__overlay">
+                <div class="model-tags">
+                  <span>Focus</span>
+                  <span>Fiesta</span>
+                  <span>Mondeo</span>
+                  <span>Kuga</span>
+                  <span>Puma</span>
+                  <span>Ranger</span>
+                  <span>Transit</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="hero-card__footer">
-            <div>
-              <strong>Brza dijagnostika kvara</strong>
-              <p>Očitavanje svih modula u roku od 20 minuta</p>
-            </div>
-            <a href="#usluge" class="hero-card__arrow" aria-label="Pogledaj usluge">→</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- USLUGE -->
-  <section class="section" id="usluge">
-    <div class="container">
-      <div class="section__head">
-        <span class="section__eyebrow">Naša ekspertiza</span>
-        <h2 class="section__title">Kompletne servisne usluge za vaš Ford</h2>
-        <p class="section__desc">Koristimo isključivo originalne Ford Motorcraft delove i proverene OEM komponente po fabričkim specifikacijama.</p>
-      </div>
-
-      <div class="services-grid">
-        <article class="service-card">
-          <div class="service-card__icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-          </div>
-          <h3 class="service-card__title">Mali i veliki servis</h3>
-          <p class="service-card__text">Zamena ulja (Castrol / Motorcraft specifikacije), svih filtera, zupčastog kaiša i vodene pumpe uz upis u servisnu knjižicu.</p>
-          <span class="service-card__tag">Motorcraft & OEM</span>
-        </article>
-
-        <article class="service-card">
-          <div class="service-card__icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <h3 class="service-card__title">Ford IDS / FDRS Dijagnostika</h3>
-          <p class="service-card__text">Fabrička kompjuterska dijagnostika, kodiranje ključeva, adaptacija dizni, DPF regeneracija i ažuriranje softvera modula.</p>
-          <span class="service-card__tag">Originalni softver</span>
-        </article>
-
-        <article class="service-card">
-          <div class="service-card__icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-          </div>
-          <h3 class="service-card__title">EcoBoost & TDCi Mehanika</h3>
-          <p class="service-card__text">Specijalizovana zamena „mokrog“ kaiša u ulju na 1.0 / 1.5 EcoBoost motorima, servis turbina, EGR ventila i plivajućeg zamajca.</p>
-          <span class="service-card__tag">Specijalni alati</span>
-        </article>
-
-        <article class="service-card">
-          <div class="service-card__icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/></svg>
-          </div>
-          <h3 class="service-card__title">Kočioni sistem i trap</h3>
-          <p class="service-card__text">Zamena diskova, pločica, amortizera, silen blokova i ramena. Precizna provera stabilnosti i upravljivosti vozila.</p>
-          <span class="service-card__tag">Bezbednost na putu</span>
-        </article>
-
-        <article class="service-card">
-          <div class="service-card__icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          </div>
-          <h3 class="service-card__title">PowerShift i manuelni menjači</h3>
-          <p class="service-card__text">Servis i zamena ulja i filtera u automatskim PowerShift menjačima, zamena seta kvačila i kalibracija aktuatora.</p>
-          <span class="service-card__tag">Glatko menjanje brzina</span>
-        </article>
-
-        <article class="service-card">
-          <div class="service-card__icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-          </div>
-          <h3 class="service-card__title">Auto klima i priprema za put</h3>
-          <p class="service-card__text">Punjenje i dezinfekcija auto-klime (R134a i R1234yf), kontrola rashladnog sistema i pregled vozila pre tehničkog ili dužeg puta.</p>
-          <span class="service-card__tag">Kompletna provera</span>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ZAŠTO MI -->
-  <section class="section section--dark" id="zasto-mi">
-    <div class="container why-grid">
-      <div class="why-content">
-        <span class="section__eyebrow section__eyebrow--light">Standard kvaliteta</span>
-        <h2 class="section__title section__title--light">Zašto vlasnici Forda biraju FORD company?</h2>
-        <p class="why-lead">
-          Ne radimo sve marke automobila — fokusirani smo isključivo na Ford. To znači bržu detekciju kvara, poznavanje svake specifičnosti motora i fer cenu bez nepotrebnih zamena ispravnih delova.
-        </p>
-
-        <div class="why-list">
-          <div class="why-item">
-            <div class="why-item__num">01</div>
-            <div>
-              <h4>Transparentna cena pre početka rada</h4>
-              <p>Pre svake intervencije dobijate tačnu specifikaciju delova i radnih sati — nema skrivenih troškova pri preuzimanju vozila.</p>
-            </div>
-          </div>
-          <div class="why-item">
-            <div class="why-item__num">02</div>
-            <div>
-              <h4>Specijalni alati za EcoBoost i TDCi</h4>
-              <p>Posedujemo fabričke alate za zupčenje najnovijih Ford agregata, čime garantujemo apsolutnu preciznost.</p>
-            </div>
-          </div>
-          <div class="why-item">
-            <div class="why-item__num">03</div>
-            <div>
-              <h4>Pisana garancija i servisna istorija</h4>
-              <p>Svaki ugrađeni deo i izvršena usluga prate se kroz digitalnu evidenciju vašeg vozila u našem servisu.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="why-panel">
-        <div class="why-panel__card">
-          <h3>Besplatan pregled u 15 tačaka</h3>
-          <p>Uz svaki zakazani mali ili veliki servis dobijate kompletnu proveru trapa, kočnica, akumulatora i tečnosti.</p>
-          <ul class="check-list">
-            <li>Provera stanja kočionih pločica i diskova</li>
-            <li>Kontrola trapa i amortizera</li>
-            <li>Testiranje akumulatora i punjenja alternatora</li>
-            <li>Očitavanje grešaka sa dijagnostike</li>
-          </ul>
-          <a href="#zakazivanje" class="btn btn--white btn--full">Iskoristi pogodnost</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALERIJA -->
-  <section class="section" id="galerija">
-    <div class="container">
-      <div class="section__head">
-        <span class="section__eyebrow">Pogled u radionicu</span>
-        <h2 class="section__title">Galerija našeg servisa</h2>
-        <p class="section__desc">Savremena oprema, uredan radni prostor i svakodnevni rad na najnovijim i starijim generacijama Ford vozila.</p>
-      </div>
-
-      <div class="gallery-filters" role="tablist" aria-label="Filter galerije">
-        <button class="filter-btn active" data-filter="all">Sve fotografije</button>
-        <button class="filter-btn" data-filter="dijagnostika">Dijagnostika</button>
-        <button class="filter-btn" data-filter="mehanika">Mehanika & EcoBoost</button>
-        <button class="filter-btn" data-filter="radionica">Radionica</button>
-      </div>
-
-      <div class="gallery-grid" id="galleryGrid">
-        <figure class="gallery-item" data-category="mehanika" data-title="Servis 1.0 EcoBoost motora" data-desc="Zamena zupčastog kaiša u ulju uz originalne fabričke alate za zupčenje.">
-          <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80" alt="Servis motora u radionici" loading="lazy" />
-          <figcaption class="gallery-item__overlay">
-            <span class="gallery-item__cat">Mehanika & EcoBoost</span>
-            <h4>Servis 1.0 EcoBoost motora</h4>
-            <span class="gallery-item__zoom">Uvećaj prikaz +</span>
-          </figcaption>
-        </figure>
-
-        <figure class="gallery-item" data-category="dijagnostika" data-title="Fabrička IDS / FDRS dijagnostika" data-desc="Detaljno očitavanje parametara motora, dizni i elektronskih modula.">
-          <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80" alt="Kompjuterska dijagnostika automobila" loading="lazy" />
-          <figcaption class="gallery-item__overlay">
-            <span class="gallery-item__cat">Dijagnostika</span>
-            <h4>Fabrička IDS / FDRS dijagnostika</h4>
-            <span class="gallery-item__zoom">Uvećaj prikaz +</span>
-          </figcaption>
-        </figure>
-
-        <figure class="gallery-item" data-category="radionica" data-title="Servisna mesta i dizalice" data-desc="Opremljene radne pozicije za brz i bezbedan prijem putničkih i lakih komercijalnih vozila.">
-          <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=800&q=80" alt="Auto servis radionica" loading="lazy" />
-          <figcaption class="gallery-item__overlay">
-            <span class="gallery-item__cat">Radionica</span>
-            <h4>Servisna mesta i dizalice</h4>
-            <span class="gallery-item__zoom">Uvećaj prikaz +</span>
-          </figcaption>
-        </figure>
-
-        <figure class="gallery-item" data-category="mehanika" data-title="Kočioni sistem i oslanjanje" data-desc="Ugradnja originalnih diskova i pločica za maksimalnu zaustavnu moć.">
-          <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=800&q=80" alt="Servis kočnica i točkova" loading="lazy" />
-          <figcaption class="gallery-item__overlay">
-            <span class="gallery-item__cat">Mehanika & EcoBoost</span>
-            <h4>Kočioni sistem i oslanjanje</h4>
-            <span class="gallery-item__zoom">Uvećaj prikaz +</span>
-          </figcaption>
-        </figure>
-
-        <figure class="gallery-item" data-category="radionica" data-title="Ford Focus ST-Line na redovnom servisu" data-desc="Redovno održavanje uz Motorcraft ulje i filtere po fabričkoj normi.">
-          <img src="https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=800&q=80" alt="Ford vozilo na servisu" loading="lazy" />
-          <figcaption class="gallery-item__overlay">
-            <span class="gallery-item__cat">Radionica</span>
-            <h4>Ford Focus na redovnom servisu</h4>
-            <span class="gallery-item__zoom">Uvećaj prikaz +</span>
-          </figcaption>
-        </figure>
-
-        <figure class="gallery-item" data-category="dijagnostika" data-title="Kontrola elektronike i punjenja" data-desc="Precizno testiranje akumulatora, alternatora i senzora pre zimske ili letnje sezone.">
-          <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=800&q=80" alt="Pregled elektronike vozila" loading="lazy" />
-          <figcaption class="gallery-item__overlay">
-            <span class="gallery-item__cat">Dijagnostika</span>
-            <h4>Kontrola elektronike i punjenja</h4>
-            <span class="gallery-item__zoom">Uvećaj prikaz +</span>
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- ISKUSTVA KLIJENATA (TESTIMONIALS) -->
-  <section class="section section--gray" id="iskustva">
-    <div class="container">
-      <div class="testimonials-top">
-        <div>
-          <span class="section__eyebrow">Reč vozača</span>
-          <h2 class="section__title">Iskustva naših klijenata</h2>
-          <p class="section__desc">Poverenje vlasnika Ford automobila gradimo iskrenim savetima, tačnim rokovima i kvalitetnim radom.</p>
-        </div>
-
-        <div class="rating-summary">
-          <div class="rating-summary__score">4.9</div>
-          <div>
-            <div class="rating-summary__stars" aria-label="Ocena 5 od 5 zvezdica">★★★★★</div>
-            <p class="rating-summary__count">Na osnovu <strong>320+</strong> zadovoljnih klijenata</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonials-grid" id="testimonialsGrid"></div>
-
-      <div class="testimonials-more">
-        <button type="button" class="btn btn--outline" id="toggleReviewsBtn">Prikaži više recenzija</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ZAKAZIVANJE SERVISA -->
-  <section class="section" id="zakazivanje">
-    <div class="container">
-      <div class="booking-wrapper">
-        <div class="booking-info">
-          <span class="section__eyebrow">Brzo i jednostavno</span>
-          <h2 class="section__title">Zakažite termin u FORD company</h2>
-          <p>Izaberite vaš model Forda i vrstu usluge, a naš tim će vas kontaktirati u najkraćem roku radi potvrde termina i tačne ponude.</p>
-
-          <div class="estimate-box" id="estimateBox">
-            <div class="estimate-box__header">
-              <span>Okvirna procena termina</span>
-              <span class="estimate-badge" id="estBadge">Brza usluga</span>
-            </div>
-            <div class="estimate-box__details">
+            <div class="hero-card__footer">
               <div>
-                <small>Izabrano vozilo</small>
-                <strong id="estModel">Ford Focus</strong>
+                <strong>Brza dijagnostika kvara</strong>
+                <p>Očitavanje svih modula u roku od 20 minuta</p>
               </div>
-              <div>
-                <small>Procenjeno vreme</small>
-                <strong id="estTime">~ 60 min</strong>
-              </div>
-              <div>
-                <small>Orijentaciona cena rada</small>
-                <strong id="estPrice">od 3.500 RSD</strong>
-              </div>
+              <a href="#usluge" class="hero-card__arrow" aria-label="Pogledaj usluge">→</a>
             </div>
           </div>
         </div>
-
-        <form class="booking-form" id="bookingForm">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="model">Model vozila *</label>
-              <select id="model" name="model" required>
-                <option value="Ford Focus">Ford Focus</option>
-                <option value="Ford Fiesta">Ford Fiesta</option>
-                <option value="Ford Mondeo">Ford Mondeo</option>
-                <option value="Ford Kuga">Ford Kuga</option>
-                <option value="Ford Puma">Ford Puma</option>
-                <option value="Ford C-MAX / S-MAX">Ford C-MAX / S-MAX</option>
-                <option value="Ford Ranger">Ford Ranger</option>
-                <option value="Ford Transit / Custom">Ford Transit / Custom</option>
-                <option value="Drugi Ford model">Drugi Ford model</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="year">Godište i motor</label>
-              <input type="text" id="year" name="year" placeholder="npr. 2018, 1.5 TDCi" />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="service">Potrebna usluga *</label>
-              <select id="service" name="service" required></select>
-            </div>
-
-            <div class="form-group">
-              <label for="date">Željeni datum *</label>
-              <input type="date" id="date" name="date" required />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Ime i prezime *</label>
-              <input type="text" id="name" name="name" placeholder="Marko Petrović" required />
-            </div>
-
-            <div class="form-group">
-              <label for="phone">Broj telefona *</label>
-              <input type="tel" id="phone" name="phone" placeholder="060 123 4567" required />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="note">Dodatna napomena (opciono)</label>
-            <textarea id="note" name="note" rows="3" placeholder="Opišite ukratko simptome, broj šasije (VIN) za ponudu delova..."></textarea>
-          </div>
-
-          <div class="booking-submit-group">
-            <button
-              type="button"
-              class="btn btn--ford-social btn--lg"
-              id="sendWhatsappBtn"
-              aria-label="Pošalji zahtev na WhatsApp"
-              title="Pošalji na WhatsApp"
-            >
-              Pošalji na WhatsApp<i class="fa-brands fa-whatsapp" style="font-size: 1.65rem;"></i>
-            </button>
-
-            <button
-              type="button"
-              class="btn btn--ford-social btn--lg"
-              id="sendViberBtn"
-              aria-label="Pošalji zahtev na Viber"
-              title="Pošalji na Viber"
-            >
-              Pošalji na Viber<i class="fa-brands fa-viber" style="font-size: 1.65rem;"></i>
-            </button>
-          </div>
-        </form>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- LOKACIJA SERVISA (IZNAD FUTERA) -->
-  <section class="section section--gray" id="lokacija">
-    <div class="container">
-      <div class="location-grid">
-        <div class="location-info">
-          <span class="section__eyebrow">Gde se nalazimo</span>
-          <h2 class="section__title">Posetite naš servis u Nišu</h2>
-          <p class="location-info__desc">
-            Lako dostupan prilaz i obezbeđen parking za sva vozila klijenata ispred same radionice.
+    <!-- USLUGE -->
+    <section class="section" id="usluge">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__eyebrow">Naša ekspertiza</span>
+          <h2 class="section__title">Kompletne servisne usluge za vaš Ford</h2>
+          <p class="section__desc">Koristimo isključivo originalne Ford Motorcraft delove i proverene OEM komponente po fabričkim specifikacijama.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-card__icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3 class="service-card__title">Mali i veliki servis</h3>
+            <p class="service-card__text">Zamena ulja (Castrol / Motorcraft specifikacije), svih filtera, zupčastog kaiša i vodene pumpe uz upis u servisnu knjižicu.</p>
+            <span class="service-card__tag">Motorcraft & OEM</span>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3 class="service-card__title">Ford IDS / FDRS Dijagnostika</h3>
+            <p class="service-card__text">Fabrička kompjuterska dijagnostika, kodiranje ključeva, adaptacija dizni, DPF regeneracija i ažuriranje softvera modula.</p>
+            <span class="service-card__tag">Originalni softver</span>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </div>
+            <h3 class="service-card__title">EcoBoost & TDCi Mehanika</h3>
+            <p class="service-card__text">Specijalizovana zamena „mokrog“ kaiša u ulju na 1.0 / 1.5 EcoBoost motorima, servis turbina, EGR ventila i plivajućeg zamajca.</p>
+            <span class="service-card__tag">Specijalni alati</span>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/></svg>
+            </div>
+            <h3 class="service-card__title">Kočioni sistem i trap</h3>
+            <p class="service-card__text">Zamena diskova, pločica, amortizera, silen blokova i ramena. Precizna provera stabilnosti i upravljivosti vozila.</p>
+            <span class="service-card__tag">Bezbednost na putu</span>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3 class="service-card__title">PowerShift i manuelni menjači</h3>
+            <p class="service-card__text">Servis i zamena ulja i filtera u automatskim PowerShift menjačima, zamena seta kvačila i kalibracija aktuatora.</p>
+            <span class="service-card__tag">Glatko menjanje brzina</span>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+            </div>
+            <h3 class="service-card__title">Auto klima i priprema za put</h3>
+            <p class="service-card__text">Punjenje i dezinfekcija auto-klime (R134a i R1234yf), kontrola rashladnog sistema i pregled vozila pre tehničkog ili dužeg puta.</p>
+            <span class="service-card__tag">Kompletna provera</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ZAŠTO MI -->
+    <section class="section section--dark" id="zasto-mi">
+      <div class="container why-grid">
+        <div class="why-content">
+          <span class="section__eyebrow section__eyebrow--light">Standard kvaliteta</span>
+          <h2 class="section__title section__title--light">Zašto vlasnici Forda biraju FORD company?</h2>
+          <p class="why-lead">
+            Ne radimo sve marke automobila — fokusirani smo isključivo na Ford. To znači bržu detekciju kvara, poznavanje svake specifičnosti motora i fer cenu bez nepotrebnih zamena ispravnih delova.
           </p>
 
-          <div class="location-cards">
-            <div class="location-item">
-              <div class="location-item__icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
+          <div class="why-list">
+            <div class="why-item">
+              <div class="why-item__num">01</div>
               <div>
-                <strong>Adresa radionice</strong>
-                <span>Alpska 4, 18000 Niš, Srbija</span>
+                <h3>Transparentna cena pre početka rada</h3>
+                <p>Pre svake intervencije dobijate tačnu specifikaciju delova i radnih sati — nema skrivenih troškova pri preuzimanju vozila.</p>
               </div>
             </div>
-
-            <div class="location-item">
-              <div class="location-item__icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
+            <div class="why-item">
+              <div class="why-item__num">02</div>
               <div>
-                <strong>Radno vreme</strong>
-                <span>Pon – Pet: 08:00 – 17:00 • Subota: 08:00 – 14:00</span>
+                <h3>Specijalni alati za EcoBoost i TDCi</h3>
+                <p>Posedujemo fabričke alate za zupčenje najnovijih Ford agregata, čime garantujemo apsolutnu preciznost.</p>
               </div>
             </div>
-
-            <div class="location-item">
-              <div class="location-item__icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              </div>
+            <div class="why-item">
+              <div class="why-item__num">03</div>
               <div>
-                <strong>Telefon za informacije</strong>
-                <span><a href="tel:+381600670725">060 / 0670725</a></span>
+                <h3>Pisana garancija i servisna istorija</h3>
+                <p>Svaki ugrađeni deo i izvršena usluga prate se kroz digitalnu evidenciju vašeg vozila u našem servisu.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-panel">
+          <div class="why-panel__card">
+            <h3>Besplatan pregled u 15 tačaka</h3>
+            <p>Uz svaki zakazani mali ili veliki servis dobijate kompletnu proveru trapa, kočnica, akumulatora i tečnosti.</p>
+            <ul class="check-list">
+              <li>Provera stanja kočionih pločica i diskova</li>
+              <li>Kontrola trapa i amortizera</li>
+              <li>Testiranje akumulatora i punjenja alternatora</li>
+              <li>Očitavanje grešaka sa dijagnostike</li>
+            </ul>
+            <a href="#zakazivanje" class="btn btn--white btn--full">Iskoristi pogodnost</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIJA -->
+    <section class="section" id="galerija">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__eyebrow">Pogled u radionicu</span>
+          <h2 class="section__title">Galerija našeg servisa</h2>
+          <p class="section__desc">Savremena oprema, uredan radni prostor i svakodnevni rad na najnovijim i starijim generacijama Ford vozila.</p>
+        </div>
+
+        <div class="gallery-filters" role="group" aria-label="Filter galerije">
+          <button type="button" class="filter-btn active" data-filter="all">Sve fotografije</button>
+          <button type="button" class="filter-btn" data-filter="dijagnostika">Dijagnostika</button>
+          <button type="button" class="filter-btn" data-filter="mehanika">Mehanika & EcoBoost</button>
+          <button type="button" class="filter-btn" data-filter="radionica">Radionica</button>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+          <figure class="gallery-item" data-category="mehanika" data-title="Servis 1.0 EcoBoost motora" data-desc="Zamena zupčastog kaiša u ulju uz originalne fabričke alate za zupčenje.">
+            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80" alt="Servis motora u radionici" loading="lazy" decoding="async" />
+            <figcaption class="gallery-item__overlay">
+              <span class="gallery-item__cat">Mehanika & EcoBoost</span>
+              <h3>Servis 1.0 EcoBoost motora</h3>
+              <span class="gallery-item__zoom">Uvećaj prikaz +</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="dijagnostika" data-title="Fabrička IDS / FDRS dijagnostika" data-desc="Detaljno očitavanje parametara motora, dizni i elektronskih modula.">
+            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80" alt="Kompjuterska dijagnostika automobila" loading="lazy" decoding="async" />
+            <figcaption class="gallery-item__overlay">
+              <span class="gallery-item__cat">Dijagnostika</span>
+              <h3>Fabrička IDS / FDRS dijagnostika</h3>
+              <span class="gallery-item__zoom">Uvećaj prikaz +</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="radionica" data-title="Servisna mesta i dizalice" data-desc="Opremljene radne pozicije za brz i bezbedan prijem putničkih i lakih komercijalnih vozila.">
+            <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=800&q=80" alt="Auto servis radionica" loading="lazy" decoding="async" />
+            <figcaption class="gallery-item__overlay">
+              <span class="gallery-item__cat">Radionica</span>
+              <h3>Servisna mesta i dizalice</h3>
+              <span class="gallery-item__zoom">Uvećaj prikaz +</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="mehanika" data-title="Kočioni sistem i oslanjanje" data-desc="Ugradnja originalnih diskova i pločica za maksimalnu zaustavnu moć.">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=800&q=80" alt="Servis kočnica i točkova" loading="lazy" decoding="async" />
+            <figcaption class="gallery-item__overlay">
+              <span class="gallery-item__cat">Mehanika & EcoBoost</span>
+              <h3>Kočioni sistem i oslanjanje</h3>
+              <span class="gallery-item__zoom">Uvećaj prikaz +</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="radionica" data-title="Ford Focus ST-Line na redovnom servisu" data-desc="Redovno održavanje uz Motorcraft ulje i filtere po fabričkoj normi.">
+            <img src="https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=800&q=80" alt="Ford vozilo na servisu" loading="lazy" decoding="async" />
+            <figcaption class="gallery-item__overlay">
+              <span class="gallery-item__cat">Radionica</span>
+              <h3>Ford Focus na redovnom servisu</h3>
+              <span class="gallery-item__zoom">Uvećaj prikaz +</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="dijagnostika" data-title="Kontrola elektronike i punjenja" data-desc="Precizno testiranje akumulatora, alternatora i senzora pre zimske ili letnje sezone.">
+            <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=800&q=80" alt="Pregled elektronike vozila" loading="lazy" decoding="async" />
+            <figcaption class="gallery-item__overlay">
+              <span class="gallery-item__cat">Dijagnostika</span>
+              <h3>Kontrola elektronike i punjenja</h3>
+              <span class="gallery-item__zoom">Uvećaj prikaz +</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ISKUSTVA KLIJENATA (TESTIMONIALS) -->
+    <section class="section section--gray" id="iskustva">
+      <div class="container">
+        <div class="testimonials-top">
+          <div>
+            <span class="section__eyebrow">Reč vozača</span>
+            <h2 class="section__title">Iskustva naših klijenata</h2>
+            <p class="section__desc">Poverenje vlasnika Ford automobila gradimo iskrenim savetima, tačnim rokovima i kvalitetnim radom.</p>
+          </div>
+
+          <div class="rating-summary">
+            <div class="rating-summary__score">4.9</div>
+            <div>
+              <div class="rating-summary__stars" aria-label="Ocena 5 od 5 zvezdica">★★★★★</div>
+              <p class="rating-summary__count">Na osnovu <strong>320+</strong> zadovoljnih klijenata</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonials-grid" id="testimonialsGrid"></div>
+
+        <div class="testimonials-more">
+          <button type="button" class="btn btn--outline" id="toggleReviewsBtn">Prikaži više recenzija</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ZAKAZIVANJE SERVISA -->
+    <section class="section" id="zakazivanje">
+      <div class="container">
+        <div class="booking-wrapper">
+          <div class="booking-info">
+            <span class="section__eyebrow">Brzo i jednostavno</span>
+            <h2 class="section__title">Zakažite termin u FORD company</h2>
+            <p>Izaberite vaš model Forda i vrstu usluge, a naš tim će vas kontaktirati u najkraćem roku radi potvrde termina i tačne ponude.</p>
+
+            <div class="estimate-box" id="estimateBox">
+              <div class="estimate-box__header">
+                <span>Okvirna procena termina</span>
+                <span class="estimate-badge" id="estBadge">Brza usluga</span>
+              </div>
+              <div class="estimate-box__details">
+                <div>
+                  <small>Izabrano vozilo</small>
+                  <strong id="estModel">Ford Focus</strong>
+                </div>
+                <div>
+                  <small>Procenjeno vreme</small>
+                  <strong id="estTime">~ 60 min</strong>
+                </div>
+                <div>
+                  <small>Orijentaciona cena rada</small>
+                  <strong id="estPrice">od 3.500 RSD</strong>
+                </div>
               </div>
             </div>
           </div>
 
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=Alpska+4,+Ni%C5%A1,+Srbija"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn--primary location-btn"
-          >
-            Otvori navigaciju (Google Maps) ↗
-          </a>
-        </div>
+          <form class="booking-form" id="bookingForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="model">Model vozila *</label>
+                <select id="model" name="model" required>
+                  <option value="Ford Focus">Ford Focus</option>
+                  <option value="Ford Fiesta">Ford Fiesta</option>
+                  <option value="Ford Mondeo">Ford Mondeo</option>
+                  <option value="Ford Kuga">Ford Kuga</option>
+                  <option value="Ford Puma">Ford Puma</option>
+                  <option value="Ford C-MAX / S-MAX">Ford C-MAX / S-MAX</option>
+                  <option value="Ford Ranger">Ford Ranger</option>
+                  <option value="Ford Transit / Custom">Ford Transit / Custom</option>
+                  <option value="Drugi Ford model">Drugi Ford model</option>
+                </select>
+              </div>
 
-        <div class="location-map">
-          <iframe
-            title="Lokacija servisa FORD company - Alpska 4, Niš"
-            src="https://maps.google.com/maps?q=Alpska%204,%20Ni%C5%A1,%20Serbia&t=&z=16&ie=UTF8&iwloc=&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+              <div class="form-group">
+                <label for="year">Godište i motor</label>
+                <input type="text" id="year" name="year" placeholder="npr. 2018, 1.5 TDCi" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="service">Potrebna usluga *</label>
+                <select id="service" name="service" required></select>
+              </div>
+
+              <div class="form-group">
+                <label for="date">Željeni datum *</label>
+                <input type="date" id="date" name="date" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Ime i prezime *</label>
+                <input type="text" id="name" name="name" placeholder="Marko Petrović" required />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Broj telefona *</label>
+                <input type="tel" id="phone" name="phone" placeholder="060 123 4567" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="note">Dodatna napomena (opciono)</label>
+              <textarea id="note" name="note" rows="3" placeholder="Opišite ukratko simptome, broj šasije (VIN) za ponudu delova..."></textarea>
+            </div>
+
+            <div class="booking-submit-group">
+              <button
+                type="button"
+                class="btn btn--ford-social btn--lg"
+                id="sendWhatsappBtn"
+                aria-label="Pošalji zahtev na WhatsApp"
+                title="Pošalji na WhatsApp"
+              >
+                Pošalji na WhatsApp <i class="fa-brands fa-whatsapp" style="font-size: 1.65rem;" aria-hidden="true"></i>
+              </button>
+
+              <button
+                type="button"
+                class="btn btn--ford-social btn--lg"
+                id="sendViberBtn"
+                aria-label="Pošalji zahtev na Viber"
+                title="Pošalji na Viber"
+              >
+                Pošalji na Viber <i class="fa-brands fa-viber" style="font-size: 1.65rem;" aria-hidden="true"></i>
+              </button>
+            </div>
+          </form>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- LOKACIJA SERVISA (IZNAD FUTERA) -->
+    <section class="section section--gray" id="lokacija">
+      <div class="container">
+        <div class="location-grid">
+          <div class="location-info">
+            <span class="section__eyebrow">Gde se nalazimo</span>
+            <h2 class="section__title">Posetite naš servis u Nišu</h2>
+            <p class="location-info__desc">
+              Lako dostupan prilaz i obezbeđen parking za sva vozila klijenata ispred same radionice.
+            </p>
+
+            <div class="location-cards">
+              <div class="location-item">
+                <div class="location-item__icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <strong>Adresa radionice</strong>
+                  <span>Alpska 4, 18000 Niš, Srbija</span>
+                </div>
+              </div>
+
+              <div class="location-item">
+                <div class="location-item__icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div>
+                  <strong>Radno vreme</strong>
+                  <span>Pon – Pet: 08:00 – 17:00 • Subota: 08:00 – 14:00</span>
+                </div>
+              </div>
+
+              <div class="location-item">
+                <div class="location-item__icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div>
+                  <strong>Telefon za informacije</strong>
+                  <span><a href="tel:+381600670725">060 / 0670725</a></span>
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Alpska+4,+Ni%C5%A1,+Srbija"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn--primary location-btn"
+            >
+              Otvori navigaciju (Google Maps) ↗
+            </a>
+          </div>
+
+          <div class="location-map">
+            <iframe
+              title="Lokacija servisa FORD company - Alpska 4, Niš"
+              src="https://maps.google.com/maps?q=Alpska%204,%20Ni%C5%A1,%20Serbia&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- KONTAKT & FUTER -->
   <footer class="footer" id="kontakt">
     <div class="container footer__grid">
       <div class="footer__brand">
-        <a href="#" class="logo logo--footer">
-          <svg class="logo__oval" viewBox="0 0 150 64" width="120" height="50" xmlns="http://www.w3.org/2000/svg">
+        <a href="#" class="logo logo--footer" aria-label="FORD company početna">
+          <svg class="logo__oval" viewBox="0 0 150 64" width="120" height="50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <ellipse cx="75" cy="32" rx="73" ry="30" fill="#CBD5E1" />
             <ellipse cx="75" cy="32" rx="66" ry="24.5" fill="#003478" stroke="#FFFFFF" stroke-width="1.2" />
             <text x="75" y="39" text-anchor="middle" fill="#FFFFFF" font-family="'Montserrat', sans-serif" font-weight="800" font-style="italic" font-size="25" letter-spacing="1.5">FORD</text>
@@ -549,7 +588,7 @@
       </div>
 
       <div>
-        <h4 class="footer__heading">Kontakt podaci</h4>
+        <h3 class="footer__heading">Kontakt podaci</h3>
         <ul class="footer__list">
           <li><strong>Adresa:</strong> Alpska 4, Niš, Srbija</li>
           <li><strong>Telefon:</strong> <a href="tel:+381600670725">060 / 0670725</a></li>
@@ -558,7 +597,7 @@
       </div>
 
       <div>
-        <h4 class="footer__heading">Radno vreme</h4>
+        <h3 class="footer__heading">Radno vreme</h3>
         <ul class="footer__list">
           <li><strong>Ponedeljak – Petak:</strong> 08:00 – 17:00</li>
           <li><strong>Subota:</strong> 08:00 – 14:00</li>
@@ -567,7 +606,7 @@
       </div>
 
       <div>
-        <h4 class="footer__heading">Brzi linkovi</h4>
+        <h3 class="footer__heading">Brzi linkovi</h3>
         <ul class="footer__list">
           <li><a href="#usluge">Servisne usluge</a></li>
           <li><a href="#galerija">Galerija servisa</a></li>
@@ -582,7 +621,7 @@
       <div class="container footer__bottom-inner">
         <p>© <span id="currentYear"></span> FORD company. Sva prava zadržana.</p>
         <p class="footer__author">
-          Sajt izradio: 
+          Sajt izradio:
           <a href="https://www.linkedin.com/in/aleksandar-rasic-jimmy/" target="_blank" rel="noopener noreferrer">
             Aleksandar Rašić
           </a>
@@ -593,23 +632,23 @@
 
   <!-- BACK TO TOP DUGME -->
   <button type="button" class="back-to-top" id="backToTopBtn" aria-label="Povratak na vrh stranice" title="Na vrh">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
   </button>
 
   <!-- LIGHTBOX MODAL ZA GALERIJU -->
   <div class="lightbox" id="lightboxModal" aria-hidden="true">
-    <button class="lightbox__close" id="lightboxClose" aria-label="Zatvori galeriju">✕</button>
-    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Prethodna slika">‹</button>
+    <button type="button" class="lightbox__close" id="lightboxClose" aria-label="Zatvori galeriju">✕</button>
+    <button type="button" class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Prethodna slika">‹</button>
     <div class="lightbox__content">
       <img src="" alt="" id="lightboxImg" />
       <div class="lightbox__caption">
-        <h4 id="lightboxTitle"></h4>
+        <h3 id="lightboxTitle"></h3>
         <p id="lightboxDesc"></p>
       </div>
     </div>
-    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Sledeća slika">›</button>
+    <button type="button" class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Sledeća slika">›</button>
   </div>
 
   <!-- MODAL POTVRDE ZAKAZIVANJA -->
@@ -618,12 +657,12 @@
       <div class="modal__icon">✓</div>
       <h3>Zahtev uspešno poslat!</h3>
       <p id="modalSummary">Hvala! Vaš zahtev za servis je zabeležen.</p>
-      <button class="btn btn--primary btn--full" id="closeModalBtn">U redu</button>
+      <button type="button" class="btn btn--primary btn--full" id="closeModalBtn">U redu</button>
     </div>
   </div>
 
-  <script src="data/services.js"></script>
-  <script src="data/reviews.js"></script>
-  <script src="app.js"></script>
+  <script src="data/services.js" defer></script>
+  <script src="data/reviews.js" defer></script>
+  <script src="app.js" defer></script>
 </body>
 </html>

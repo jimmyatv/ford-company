@@ -1747,3 +1747,43 @@ a {
   position: relative;
   z-index: 1;
 }
+
+/* Popravka kontrasta za Lighthouse 100 Accessibility i h3 stilovi */
+.section__eyebrow {
+  color: #00449e;
+}
+
+.section__eyebrow--light {
+  color: #93c5fd;
+}
+
+.hero-card__status {
+  color: #4ade80;
+}
+
+.footer__desc,
+.footer__list,
+.footer__bottom {
+  color: #cbd5e1;
+}
+
+.why-item h3 {
+  font-family: var(--font-heading, 'Montserrat', sans-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.gallery-item__overlay h3 {
+  font-family: var(--font-heading, 'Montserrat', sans-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 4px 0;
+}
+
+/* Crveni status kada servis ne radi (visok kontrast za Lighthouse 100) */
+.hero-card__status.is-closed {
+  color: #f87171;
+}
